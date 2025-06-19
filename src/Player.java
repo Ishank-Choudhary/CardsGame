@@ -7,7 +7,9 @@ public class Player {
     private String name;
     private int shuffleCount;
 
-    static List<Card> deck = Card.getStandardDeck();
+    public String getName() {
+        return name;
+    }
 
     public int getShuffleCount() {
         return shuffleCount;
@@ -28,7 +30,7 @@ public class Player {
     }
 
     public List<Card> drawCards(List<Card> deck, int numberOfDraws){
-        List<Card> cardListForRank = new ArrayList<>(5);
+        List<Card> cardListForRank = new ArrayList<>(numberOfDraws);
         for(int i=0;i<numberOfDraws;i++){
             Card  c = getRandomElement(deck);
             cardListForRank.add(c);
