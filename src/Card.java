@@ -37,7 +37,7 @@ public record Card(Suit suit, String face ,int rank) {
         return listFace;
     }
 
-    public static List<Card> getNUmericCard(){
+    public static List<Card> getNumericCard(){
         List<Card> listNumeric = new ArrayList<>(32);
         for(Card.Suit suit: Card.Suit.values()) {
             for (int i = 2; i <= 10; i++) {
@@ -50,5 +50,15 @@ public record Card(Suit suit, String face ,int rank) {
             System.out.println();///
         }
         return listNumeric;
+    }
+
+    public static List<Card> getStandardDeck(){
+        List<Card> listAllCards = new ArrayList<>(52);
+        List<Card> numericCards = getNumericCard();
+        List<Card> faceCards = getFaceCard();
+        listAllCards.addAll(numericCards);
+        listAllCards.addAll(faceCards);
+
+        return listAllCards;
     }
 }
