@@ -54,10 +54,8 @@ public record Card(Suit suit, String face ,int rank) {
 
     public static List<Card> getStandardDeck(){
         List<Card> listAllCards = new ArrayList<>(52);
-        List<Card> numericCards = getNumericCard();
-        List<Card> faceCards = getFaceCard();
-        listAllCards.addAll(numericCards);
-        listAllCards.addAll(faceCards);
+        listAllCards.addAll(getNumericCard());
+        listAllCards.addAll(getFaceCard());
 
         return listAllCards;
     }
